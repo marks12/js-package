@@ -10,7 +10,9 @@ sudo npm install -g browserify
 ```
 # Coding
 
-npm run test
+Dont forget change package name in package.json file
+
+npm run watch
 
 # Testing
 
