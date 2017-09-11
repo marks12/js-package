@@ -1,0 +1,41 @@
+{
+  "name": "ScriptName",
+  "version": "0.0.0",
+  "description": "Scripts description",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -u bdd -R spec",
+    "build": "browserify ./index.js -d -p [minifyify --no-map] > dist/scripts.min.js",
+    "watch": "watchify --debug -t browserify-shader ./index.js -o dist/scripts.min.js"
+  },
+  "author": "Tsv",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "should": "~11.2.1",
+    "mocha": "~3.4.2",
+    "watchify": "latest",
+    "browserify": "latest"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.min.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "three": "global:THREE"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "browserify-shader": "^0.1.2",
+    "browserify-shim": "^3.8.14",
+    "jquery": "^3.2.1",
+    "minifyify": "^7.3.5",
+    "mock-browser": "^0.92.14",
+    "slick-carousel-browserify": "^1.6.12",
+    "watchify": "^3.9.0"
+  }
+}
